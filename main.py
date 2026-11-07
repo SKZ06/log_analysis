@@ -4,4 +4,7 @@ from processing import extract_transforme
 if __name__=='__main__':
     data=raw.to_rows('./data')
     if data:
-        extract_transforme.extract_from_row(data[111])
+        for row in data[:200]:
+            result=extract_transforme.extract_from_row(row)
+            if result:
+                print(result)
